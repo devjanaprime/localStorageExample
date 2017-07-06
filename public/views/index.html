@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>LocalStorage Example</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/localStorage.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-app='myApp'>
     <h1>LocalStorage Example</h1>
-    <div>
-      <input type='text' placeholder='something for LS' />
-      <button>Set</button>
-      <button>Get</button>
+    <div ng-controller='LocalStorageController as lsc'>
+      <input type='text' placeholder='something for LS' ng-model='lsc.userInput'/>
+      <button ng-click='lsc.setLocalStorage()'>Set</button>
+      <button ng-click='lsc.getLocalStorage()'>Get</button>
     </div>
   </body>
 </html>
